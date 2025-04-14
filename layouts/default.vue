@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <MouseSpotlight />
     <header><Navbar /></header>
     <main><NuxtPage /></main>
     <!-- <footer><Footer /></footer> -->
@@ -7,6 +8,7 @@
 </template>
 
 <script setup lang="ts">
+import MouseSpotlight from "~/components/MouseSpotlight.vue";
 import Navbar from "~/components/Navbar.vue";
 import Footer from "~/components/Footer.vue";
 </script>
