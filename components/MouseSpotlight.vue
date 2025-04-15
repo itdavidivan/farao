@@ -13,7 +13,7 @@ export default {
   computed: {
     spotlightStyle() {
       return {
-        background: `radial-gradient(circle at ${this.mouseX}px ${this.mouseY}px, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.25) 0%, transparent 30%)`,
+        background: `radial-gradient(circle at ${this.mouseX}px ${this.mouseY}px, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 0%, transparent 30%)`,
       };
     },
   },

@@ -28,9 +28,9 @@ export default {
       interval: null, // Interval pre animáciu
     };
   },
-  mounted() {
-    this.startAnimation();
-  },
+  // mounted() {
+  //   this.startAnimation();
+  // },
   beforeDestroy() {
     clearInterval(this.interval); // Zastaví interval pri zničení komponentu
   },

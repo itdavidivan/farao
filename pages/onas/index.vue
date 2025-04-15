@@ -21,14 +21,16 @@
         </section>
 
         <!-- Sekcia Naši tréneri -->
-        <section class="trainers">
-          <h2 class="section-title">Naši tréneri</h2>
-          <p>
-            Naši tréneri sú odborníci, ktorí sa o vás postarajú s láskou a
-            vášňou pre tento šport. Každý z nich má bohaté skúsenosti a neustále
-            sa vzdeláva, aby vám mohol ponúknuť to najlepšie.
-          </p>
-        </section>
+        <nuxt-link class="trainers-link" to="/onas/treneri"
+          ><section class="trainers">
+            <h2 class="section-title">Naši tréneri</h2>
+            <p>
+              Naši tréneri sú odborníci, ktorí sa o vás postarajú s láskou a
+              vášňou pre tento šport. Každý z nich má bohaté skúsenosti a
+              neustále sa vzdeláva, aby vám mohol ponúknuť to najlepšie.
+            </p>
+          </section></nuxt-link
+        >
 
         <!-- Sekcia História -->
         <section class="history">
@@ -78,6 +80,7 @@ h1 {
   color: #c9a76a;
   margin-bottom: 1.5rem;
   letter-spacing: 2px;
+  cursor: default;
 }
 
 /* Úvodný text */
@@ -87,6 +90,7 @@ h1 {
   max-width: 700px;
   margin: 0 auto 2rem auto;
   line-height: 1.8;
+  cursor: default;
 }
 
 /* Kontajner pre sekcie, flexbox pre ich zarovnanie */
@@ -118,8 +122,13 @@ h2 {
   color: #4b2e1d;
   margin-bottom: 1rem;
   font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
-
+h2:hover {
+  color: #c9a76a;
+  transform: scale(1.1);
+}
 /* Sekcia Naša vízia */
 .vision {
   background-color: #f9f9f9;
@@ -127,6 +136,7 @@ h2 {
   transition: opacity 0.5s ease-in-out;
   transform: translateX(-100%);
   animation: slideIn 2s forwards;
+  cursor: pointer;
 }
 
 /* Sekcia Naši tréneri */
@@ -135,9 +145,14 @@ h2 {
   opacity: 0.5;
   transition: opacity 0.5s ease-in-out;
   transform: translateY(-100%);
-  animation: slideIn 2s forwards;
+  animation: slideIn 1.6s forwards;
+  cursor: pointer;
 }
-
+.trainers-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
 /* Sekcia História */
 .history {
   background-color: #f9f9f9;
@@ -145,12 +160,13 @@ h2 {
   transition: opacity 0.5s ease-in-out;
   transform: translateX(100%);
   animation: slideIn 2s forwards;
+  cursor: pointer;
 }
 .vision:hover,
 .trainers:hover,
 .history:hover {
   opacity: 1;
-  cursor: default;
+  cursor: pointer;
 }
 /* Nadpisy sekcií */
 .section-title {
