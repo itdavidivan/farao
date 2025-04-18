@@ -1,7 +1,12 @@
 <template>
   <header class="navbar">
     <div class="container">
-      <NuxtLink to="/" class="logo">FARAO<span>.SK</span></NuxtLink>
+      <NuxtLink to="/" class="logo">
+        FARAO<span>.SK</span>
+        <div class="logo-farao-wrapper">
+          <img class="logo-farao" src="/public/images/farao-black.png" alt="" />
+        </div>
+      </NuxtLink>
 
       <nav class="nav">
         <ul>
@@ -52,6 +57,8 @@
   color: #ffffff;
   text-decoration: none;
   transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
 }
 
 .logo span {
@@ -103,7 +110,14 @@
 .nav a.active::after {
   width: 100%;
 }
-
+.logo-farao {
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+}
+.logo-farao-wrapper {
+  margin-bottom: 10px;
+}
 /* Responsivita - pre menšie obrazovky */
 @media (max-width: 768px) {
   .container {

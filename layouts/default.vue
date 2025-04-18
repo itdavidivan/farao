@@ -2,7 +2,9 @@
   <div class="container">
     <MouseSpotlight />
     <header><Navbar /></header>
-    <main><NuxtPage /></main>
+    <main>
+      <NuxtPage />
+    </main>
     <!-- <footer><Footer /></footer> -->
   </div>
 </template>
