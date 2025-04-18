@@ -1,11 +1,11 @@
 <template>
   <div class="contact-page">
-    <h1>Spájame pohyb s noblesou</h1>
+    <!-- <h1>Spájame pohyb s noblesou</h1>
     <p class="intro">
       Voltíž je viac než len šport – je to harmónia, elegancia a dôvera. Máte
       otázku, chcete nás navštíviť alebo snívate o tom, že sa pridáte? Ozvite sa
       nám. Radi vás privítame v našom svete.
-    </p>
+    </p> -->
 
     <div class="contact-container">
       <!-- Sekcia Kontakt & Informácie -->
@@ -112,7 +112,7 @@ body {
 /* Rodičovský kontajner */
 .contact-page {
   max-width: 1200px;
-  margin: 2rem auto;
+  margin: 7.6rem auto;
   padding: 0 1rem;
   font-family: "Poppins", sans-serif;
   color: #ffffff;
@@ -159,7 +159,7 @@ section {
   min-width: 350px;
   background: #fff;
   border: 1px solid #eaeaea;
-  padding: 1.2rem;
+  padding: 1.6rem;
   border-radius: 16px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
@@ -170,7 +170,7 @@ section {
 h2 {
   font-size: 1.7rem;
   color: #4b2e1d;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   font-weight: 600;
 }
 
@@ -181,9 +181,9 @@ h2 {
 }
 
 .contact-info-title {
-  font-size: 2rem;
+  font-size: 2.4rem;
   color: #4b2e1d;
-  margin-bottom: 2.5rem;
+
   font-weight: 600;
 }
 

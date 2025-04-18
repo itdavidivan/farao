@@ -1,16 +1,20 @@
 <template>
   <section class="hero">
     <div class="content">
-      <h1>
-        <span class="animated-span">{{ animatedText }}</span> klub
-        <span>FARAO</span>
-      </h1>
-      <p>
-        Umenie, pohyb a dôvera medzi jazdcom a koňom. Objavte svet voltíže s
-        klubom FARAO – kde sa krása spája so silou.
-      </p>
-      <div class="shadow-button">
-        <NuxtLink to="/kontakt" class="cta-button">Kontaktujte nás</NuxtLink>
+      <div class="text-content">
+        <h1>
+          <span class="animated-span">{{ animatedText }}</span> klub
+          <span>FARAO</span>
+        </h1>
+        <p>
+          Umenie, pohyb a dôvera medzi jazdcom a koňom. Objavte svet voltíže s
+          klubom FARAO – kde sa krása spája so silou.
+        </p>
+      </div>
+      <div class="center-button">
+        <div class="shadow-button">
+          <NuxtLink to="/kontakt" class="cta-button">Kontaktujte nás</NuxtLink>
+        </div>
       </div>
     </div>
   </section>
@@ -28,9 +32,9 @@ export default {
       interval: null, // Interval pre animáciu
     };
   },
-  // mounted() {
-  //   this.startAnimation();
-  // },
+  mounted() {
+    this.startAnimation();
+  },
   beforeDestroy() {
     clearInterval(this.interval); // Zastaví interval pri zničení komponentu
   },
@@ -127,7 +131,7 @@ p {
   padding: 25px 30px;
   text-transform: uppercase;
   letter-spacing: 4px;
-  color: #f0e6d2;
+  color: #ffffff;
   font-size: 2rem;
   font-weight: bold;
   text-decoration: none;
@@ -136,7 +140,8 @@ p {
   transition: all 0.8s ease;
   position: relative;
   z-index: 1;
-  background-color: transparent;
+  background-color: #08090a;
+  opacity: 0.6;
   border: 2px solid #f0e6d2;
 }
 
@@ -145,12 +150,24 @@ p {
   border-radius: 10px;
   background-color: #08090a;
   color: #f0e6d2;
-  box-shadow: 0 0 5px #f0e6d2, 0 0 25px #f0e6d2, 0 0 50px #f0e6d2,
-    0 0 200px #f0e6d2;
+  box-shadow: 0 0 5px #f0e6d2, 0 0 5px #f0e6d2, 0 0 5px #f0e6d2, 0 0 5px #f0e6d2;
   -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+  opacity: 1;
 }
 
 .shadow-button {
   display: flex;
+}
+.text-content {
+  position: absolute;
+  right: 100px;
+  top: 0px;
+  max-width: 600px;
+}
+.center-button {
+  position: relative;
+  margin-top: 160px;
+  margin-left: 510px;
+  width: 700px;
 }
 </style>

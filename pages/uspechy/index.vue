@@ -2,12 +2,12 @@
   <div class="overflow">
     <div class="achievements-page">
       <h1>Úspechy</h1>
-      <p class="intro">
+      <!-- <p class="intro">
         Každý krok vpred, každé víťazstvo, každá medaila – to všetko je dôkazom
         tvrdého tréningu, odhodlania a vášne, ktoré nás poháňajú. Na tejto
         stránke sa podelíme o naše najväčšie úspechy a ocenenia, ktoré sme
         dosiahli ako tím.
-      </p>
+      </p> -->
 
       <div class="achievements-container">
         <!-- Sekcia Medaily a Ocenenia -->
@@ -79,8 +79,8 @@ body {
 }
 
 .achievements-page {
-  margin: 2rem auto;
-  padding: 0 1rem;
+  margin: 1rem auto;
+  padding: 3rem 1rem;
   font-family: "Poppins", sans-serif;
   color: #2e2e2e;
   text-align: center;
@@ -104,11 +104,12 @@ h1 {
 
 .achievements-container {
   display: flex;
-  gap: 2rem;
+  gap: 5rem;
   justify-content: center;
   margin: 0 auto;
   flex-wrap: wrap;
   align-items: stretch;
+  padding: 0 100px;
 }
 
 /* Štýly pre rovnakú výšku a vnútorný scroll */
@@ -128,7 +129,7 @@ h1 {
   justify-content: flex-start;
   overflow: hidden;
   opacity: 0.5;
-  animation: slideIn 2s forwards;
+  animation: slideIn 1.5s forwards;
 }
 
 .achievement-box:hover {

@@ -73,7 +73,7 @@ export default {
   display: flex;
   justify-content: center;
   padding: 2rem 1rem;
-  background: #f9fafb;
+
   font-family: "Inter", sans-serif;
   min-height: 100vh;
 }

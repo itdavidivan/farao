@@ -33,5 +33,6 @@ body {
   flex-direction: column; /* Uistíme sa, že všetky deti sú v stĺpci */
   background-image: url("../images/duda.jpg");
   background-size: cover;
+  background-position: 50% 35%;
 }
 </style>
