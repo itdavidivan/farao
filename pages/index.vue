@@ -109,6 +109,7 @@ h1 {
   font-size: 3.5rem;
   margin-bottom: 1rem;
   color: #ffffff;
+  cursor: default;
 }
 
 h1 span {
@@ -125,6 +126,7 @@ p {
   line-height: 1.7;
   color: #dfdfdf;
   margin-bottom: 2rem;
+  cursor: default;
 }
 
 .cta-button {
