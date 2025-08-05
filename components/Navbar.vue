@@ -21,11 +21,59 @@
           <li>
             <NuxtLink to="/kontakt" active-class="active">Kontakt</NuxtLink>
           </li>
+          <li v-if="!isLoggedIn" class="login-register">
+            <NuxtLink to="/login" active-class="active">Login</NuxtLink>
+          </li>
+          <li v-if="!isLoggedIn" class="login-register">
+            <NuxtLink to="/register" active-class="active">Register</NuxtLink>
+          </li>
+          <li v-if="isLoggedIn">
+            <button @click="logout" class="logout-button">Logout</button>
+          </li>
         </ul>
       </nav>
+      <div v-if="messageLoggout !== ''" class="message-logout">
+        {{ messageLoggout }}
+      </div>
     </div>
   </header>
 </template>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+import { useAuthStore } from "@/stores/auth";
+
+export default defineComponent({
+  data() {
+    return {
+      auth: useAuthStore(),
+      messageLoggout: "",
+    };
+  },
+  computed: {
+    isLoggedIn(): boolean {
+      return this.auth.isLoggedIn;
+    },
+  },
+  mounted() {
+    this.auth.checkLogin();
+  },
+  methods: {
+    logout() {
+      this.auth.logout();
+      this.message();
+      this.$router.push("/");
+    },
+    message() {
+      this.messageLoggout = "Si odhlásený";
+
+      setTimeout(() => {
+        this.messageLoggout = "";
+      }, 2000); // správa zmizne po 2 sekundách
+    },
+  },
+});
+</script>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap");
@@ -73,7 +121,8 @@
   padding: 0;
 }
 
-.nav a {
+.nav a,
+.logout-button {
   font-family: "Winky Rough", cursive;
   font-size: 2rem;
   color: #ffffff;
@@ -84,7 +133,8 @@
   transition: color 0.3s ease;
 }
 
-.nav a::after {
+.nav a::after,
+.logout-button::after {
   content: "";
   position: absolute;
   left: 0;
@@ -95,21 +145,32 @@
   transition: width 0.3s ease;
 }
 
-.nav a:hover::after {
+.nav a:hover::after,
+.logout-button:hover::after {
   width: 100%;
 }
 
-.nav a:hover {
+.nav a:hover,
+.logout-button:hover {
   color: #c9a76a;
 }
 
-.nav a.active {
+.nav a.active,
+.logout-button.active {
   color: #c9a76a;
 }
 
-.nav a.active::after {
+.nav a.active::after,
+.logout-button.active::after {
   width: 100%;
 }
+.logout-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  justify-items: center;
+}
+
 .logo-farao {
   width: 50px;
   height: 50px;
@@ -118,6 +179,26 @@
 .logo-farao-wrapper {
   margin-bottom: 10px;
 }
+.login-register {
+  font-style: italic;
+}
+.message-logout {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Winky Rough", cursive;
+  font-size: 1.8rem;
+  color: #c9a76a;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #c9a76a;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: opacity 0.5s ease;
+  z-index: 10000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
 /* Responsivita - pre menšie obrazovky */
 @media (max-width: 768px) {
   .container {

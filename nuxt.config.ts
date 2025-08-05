@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/strapi", // Tento modul pre integráciu so Strapi
     "@nuxt/content", // Tento modul pre prácu s obsahom, ako je Markdown
+    "@pinia/nuxt",
   ],
   runtimeConfig: {
     public: {
